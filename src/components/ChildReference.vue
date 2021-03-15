@@ -15,7 +15,8 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component({ name: "ChildReference" })
 export default class HelloWorld extends Vue {
-  @Prop() private valueReference!: string;
+  @Prop() private valueReference!: object;
+
 }
 </script>
 

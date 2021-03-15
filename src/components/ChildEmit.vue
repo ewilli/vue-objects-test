@@ -19,17 +19,17 @@
       @input="$emit('update', valueEmit)"
       v-model="valueEmit.dog"
     />
+    <!-- <button @click="$emit('update', valueEmit)">Save</button> -->
   </div>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 
-
 @Component({ name: "ChildEmit" })
 export default class HelloWorld extends Vue {
   @Prop() initialValue!: object;
 
-  valueEmit = JSON.parse(JSON.stringify(this.initialValue));
+  valueEmit = { ...this.initialValue };
 }
 </script>
 
